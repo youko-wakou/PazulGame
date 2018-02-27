@@ -7,13 +7,6 @@
     android:background="@color/pazulBack"
     android:layout_height="match_parent">
 
-    <!--<ImageView-->
-        <!--android:id="@+id/start_pazul"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--app:srcCompat="@drawable/neko"-->
-        <!--tools:layout_editor_absoluteX="159dp"-->
-        <!--tools:layout_editor_absoluteY="0dp" />-->
 
     <Button
         android:id="@+id/pazul_start_button"
@@ -152,4 +145,12 @@
         android:layout_below="@+id/pazul-3"
         android:layout_toEndOf="@+id/pazul-3"
         android:background="@drawable/pazul8" />
+
+    <ImageView
+        android:id="@+id/start_pazul"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/neko"
+        tools:layout_editor_absoluteX="159dp"
+        tools:layout_editor_absoluteY="0dp" />
 </RelativeLayout>
