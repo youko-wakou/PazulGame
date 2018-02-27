@@ -45,7 +45,8 @@ public class PazulActivity extends AppCompatActivity {
 //    配列
     private ImageButton[] imageButtonArray;
     private List<Integer> ImageButtonIDList;
-
+//カウント
+    private int count;
 //    onCreate
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -77,11 +78,13 @@ public class PazulActivity extends AppCompatActivity {
 
     private void button_random_select() {
 //        RandomIDクラスを呼び出す
+        count = -1;
 //        backgroudn用の画像を配列にsetする
         ImageButtonIDList = Arrays.asList(
                                 R.drawable.pazul1,
                                 R.drawable.pazul2,
                                 R.drawable.pazul3,
+                                R.drawable.pazul4,
                                 R.drawable.nothing,
                                 R.drawable.pazul5,
                                 R.drawable.pazul7,
@@ -131,20 +134,18 @@ public class PazulActivity extends AppCompatActivity {
                 button_pazul15,
                 button_pazul16
         };
+        //background画像の入ったIDリストをシャッフルする
+        Collections.shuffle(ImageButtonIDList);
         for(ImageButton pazul_type: imageButtonArray){
-//            background画像の入ったIDリストをシャッフルする
-            Collections.shuffle(ImageButtonIDList);
+
 //            シャッフルしたリストの先頭を取り出す
-            int ImageButtonBackId = ImageButtonIDList.get(0);
+            count += 1;
+            int ImageButtonBackIdInt = ImageButtonIDList.get(count);
 //            関数呼び出し。backgroundを入れたリストから削除する
-            delete_Array_backgroundID(ImageButtonBackId);
-//           backgroundを設定する、ランダムに取得した先頭を入れる
-            pazul_type.setBackgroundResource(ImageButtonBackId);
+//           b　ackgroundを設定する、ランダムに取得した先頭を入れる
+            pazul_type.setBackgroundResource(ImageButtonBackIdInt);
         }
     }
 //    ===========================================================================
-//    配列からランダムに取り出し済みの値は削除する
-    private void delete_Array_backgroundID(int ID){
-        ImageButtonIDList.remove(ImageButtonIDList.indexOf(ID));
-    }
+
 }
