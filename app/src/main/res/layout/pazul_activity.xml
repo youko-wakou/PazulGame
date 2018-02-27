@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/pazulBack"
+    android:layout_height="match_parent">
+
+    <!--<ImageView-->
+        <!--android:id="@+id/start_pazul"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--app:srcCompat="@drawable/neko"-->
+        <!--tools:layout_editor_absoluteX="159dp"-->
+        <!--tools:layout_editor_absoluteY="0dp" />-->
+
+    <Button
+        android:id="@+id/pazul_start_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="26dp"
+        android:text="Button" />
+
+    <ImageButton
+        android:id="@+id/pazul-1"
+        android:layout_width="97dp"
+        android:layout_height="97dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="33dp"
+        android:background="@drawable/pazul1" />
+
+    <ImageButton
+        android:id="@+id/pazul-2"
+        android:layout_width="97dp"
+        android:layout_height="97dp"
+        android:layout_alignTop="@+id/pazul-1"
+        android:layout_toEndOf="@+id/pazul-1"
+        android:background="@drawable/pazul2" />
+
+    <ImageButton
+        android:id="@+id/pazul-3"
+        android:layout_width="97dp"
+        android:layout_height="97dp"
+        android:layout_alignTop="@+id/pazul-2"
+        android:layout_toEndOf="@+id/pazul-2"
+        android:background="@drawable/pazul3" />
+
+    <ImageButton
+        android:id="@+id/pazul-4"
+        android:layout_width="97dp"
+        android:layout_height="97dp"
+        android:layout_alignTop="@+id/pazul-3"
+        android:layout_toEndOf="@+id/pazul-3"
+        android:background="@drawable/pazul_none" />
+
+    <ImageButton
+        android:id="@+id/pazul-5"
+        android:layout_width="97dp"
+        android:layout_height="97dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/pazul-5"
+        android:background="@drawable/pazul9" />
+
+    <ImageButton
+        android:id="@+id/pazul-6"
+        android:layout_width="97dp"
+        android:layout_height="97dp"
+        android:layout_below="@+id/pazul-7"
+        android:layout_toEndOf="@+id/pazul-5"
+        android:background="@drawable/pazul10" />
+
+    <ImageButton
+        android:id="@+id/pazul-7"
+        android:layout_width="97dp"
+        android:layout_height="97dp"
+        android:layout_below="@+id/pazul-7"
+        android:layout_toEndOf="@+id/pazul-6"
+        android:background="@drawable/pazul11" />
+
+    <ImageButton
+        android:id="@+id/pazul-8"
+        android:layout_width="97dp"
+        android:layout_height="97dp"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/pazul-8"
+        android:background="@drawable/pazul12" />
+
+    <ImageButton
+        android:id="@+id/pazul-9"
+        android:layout_width="97dp"
+        android:layout_height="97dp"
+        android:layout_alignBottom="@+id/pazul-12"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="18dp"
+        android:background="@drawable/pazul13" />
+
+    <ImageButton
+        android:id="@+id/pazul-10"
+        android:layout_width="97dp"
+        android:layout_height="97dp"
+        android:layout_below="@+id/pazul-6"
+        android:layout_toEndOf="@+id/pazul-5"
+        android:background="@drawable/pazul15" />
+
+    <ImageButton
+        android:id="@+id/pazul-11"
+        android:layout_width="97dp"
+        android:layout_height="97dp"
+        android:layout_below="@+id/pazul-6"
+        android:layout_toEndOf="@+id/pazul-6"
+        android:background="@drawable/pazul16" />
+
+    <ImageButton
+        android:id="@+id/pazul-12"
+        android:layout_width="97dp"
+        android:layout_height="97dp"
+        android:layout_alignBottom="@+id/pazul_start_button"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="13dp"
+        android:background="@drawable/pazul17" />
+
+    <ImageButton
+        android:id="@+id/pazul-5"
+        android:layout_width="97dp"
+        android:layout_height="97dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/pazul-1"
+        android:background="@drawable/pazul4" />
+
+    <ImageButton
+        android:id="@+id/pazul-7"
+        android:layout_width="97dp"
+        android:layout_height="97dp"
+        android:layout_below="@+id/pazul-2"
+        android:layout_toEndOf="@+id/pazul-5"
+        android:background="@drawable/pazul5" />
+
+    <ImageButton
+        android:id="@+id/pazul-8"
+        android:layout_width="97dp"
+        android:layout_height="97dp"
+        android:layout_below="@+id/pazul-2"
+        android:layout_toEndOf="@+id/pazul-2"
+        android:background="@drawable/pazul7" />
+
+    <ImageButton
+        android:id="@+id/pazul-9"
+        android:layout_width="97dp"
+        android:layout_height="97dp"
+        android:layout_below="@+id/pazul-3"
+        android:layout_toEndOf="@+id/pazul-8"
+        android:background="@drawable/pazul8" />
+</RelativeLayout>
