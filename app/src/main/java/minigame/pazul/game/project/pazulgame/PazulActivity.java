@@ -4,6 +4,7 @@ import android.media.Image;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -144,8 +145,28 @@ public class PazulActivity extends AppCompatActivity {
 //            関数呼び出し。backgroundを入れたリストから削除する
 //           b　ackgroundを設定する、ランダムに取得した先頭を入れる
             pazul_type.setBackgroundResource(ImageButtonBackIdInt);
+
+            setViewTouchImage();
         }
     }
 //    ===========================================================================
+//    タッチイベントイメージボタンにセット
+    private void setViewTouchImage(){
+        for(ImageButton buttonView: imageButtonArray){
+            buttonView.setOnTouchListener(new View.OnTouchListener(){
+                @Override
+                public boolean onTouch(View v,MotionEvent event){
+                    if (! v.getBackground().toString().contains("@1c55c18")){
+                        System.out.println(v.getId());
+                    }else{
+
+                    }
+                    System.out.println(v.getBackground());
+                    return false;
+                }
+            });
+        }
+    }
+
 
 }
