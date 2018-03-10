@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".PazulActivity"></activity>
+        <activity android:name=".PazzleGameActivity"></activity>
     </application>
 
 </manifest>

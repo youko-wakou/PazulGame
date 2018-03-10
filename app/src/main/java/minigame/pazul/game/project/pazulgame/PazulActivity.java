@@ -9,10 +9,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+
 
 /**
  * Created by appu2 on 2018/02/27.
@@ -45,7 +47,14 @@ public class PazulActivity extends AppCompatActivity {
     private ImageButton button_pazul16;
 //    配列
     private ImageButton[] imageButtonArray;
+//    パズル設定
+    private int PazzleX = 4;
+    private int PazzleY = 4;
+    private int PazzleWidth = 94;
+    private int PazzleHeight = 94;
     private List<Integer> ImageButtonIDList;
+//    レイアウト
+    private RelativeLayout pazulGameLayout;
 //カウント
     private int count;
 //    onCreate
@@ -86,8 +95,8 @@ public class PazulActivity extends AppCompatActivity {
                                 R.drawable.pazul2,
                                 R.drawable.pazul3,
                                 R.drawable.pazul4,
-                                R.drawable.nothing,
                                 R.drawable.pazul5,
+                                R.drawable.pazul6,
                                 R.drawable.pazul7,
                                 R.drawable.pazul8,
                                 R.drawable.pazul9,
@@ -95,9 +104,8 @@ public class PazulActivity extends AppCompatActivity {
                                 R.drawable.pazul11,
                                 R.drawable.pazul12,
                                 R.drawable.pazul13,
-                                R.drawable.pazul15,
-                                R.drawable.pazul16,
-                                R.drawable.pazul17
+                                R.drawable.pazul14,
+                                R.drawable.pazul15
         );
 //        ここでButttonImageViewを取得する
         button_pazul1 = findViewById(R.id.pazul_1);
@@ -158,14 +166,16 @@ public class PazulActivity extends AppCompatActivity {
                 public boolean onTouch(View v,MotionEvent event){
                     if (! v.getBackground().toString().contains("@1c55c18")){
                         System.out.println(v.getId());
+                        System.out.println("パズルピース");
                     }else{
-
+                        System.out.println("これはピースではありません");
                     }
                     System.out.println(v.getBackground());
                     return false;
                 }
             });
         }
+
     }
 
 

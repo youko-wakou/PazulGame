@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
 //    ボタンイベント
 //    パズルゲームページ移動
     private void gamePazuleIntentClick(){
-        pazuleGameIntent = new Intent(this,PazulActivity.class);
+        pazuleGameIntent = new Intent(this,PazzleGameActivity.class);
         startActivity(pazuleGameIntent);
     }
     private void gamePazulePageClick(){
