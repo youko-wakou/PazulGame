@@ -111,19 +111,19 @@ public class PazzleGameActivity extends AppCompatActivity {
             buttonIDReturn().get(plus).setBackgroundResource(haikei);
         }
 
-
-//        buttonPazzle = new Button[4][4];
-//        int counter = -1;
-//        for (int i = 0; i < 4; i++) {
-//            for(int z = 0; z< 4; z++) {
-//                counter += 1;
-//                buttonPazzle[i][z] = imageIDhairetu.get(counter);
-//            }
-//        }
+        buttonPazzle = new Button[4][4];
+        int counter = -1;
+        for (int i = 0; i < 4; i++) {
+            for(int z = 0; z< 4; z++) {
+                counter += 1;
+                buttonPazzle[i][z] = buttonIDReturn().get(counter);
+            }
+        }
 //        タッチイベントで座標の位置を取得する
-//        touchZahyou();
+        touchZahyou();
+        buttonAnswer();
     }
-//    ボタンにIDを入れたものをとってきている
+//    ボタンにIDを入れたものをとってきている(ランダムなIDを持ったボタン）
     private void IdButtonSet(Button id){
         IDButtonlist.add(id);
     }
@@ -131,6 +131,7 @@ public class PazzleGameActivity extends AppCompatActivity {
     private List<Button> buttonIDReturn(){
         return IDButtonlist;
     }
+//    ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
     //もしパズルをタッチしたら
     public void ifPazzleTouch(){
         imageID = new Button[]{
@@ -181,85 +182,123 @@ public class PazzleGameActivity extends AppCompatActivity {
         buttonPazzle[3][2] = imagebutton15;
         buttonPazzle[3][3] = imagebutton16;
     }
-//    private void touchZahyou(){
-//        imageID = new Button[]{
-//                imagebutton1,imagebutton2,imagebutton3,imagebutton4,imagebutton5,imagebutton6,imagebutton7,imagebutton8,imagebutton9,imagebutton10,imagebutton11,imagebutton12,imagebutton13,imagebutton14,imagebutton15,imagebutton16
-//        };
-//        for(Button button: imageID) {
-//            button.setOnTouchListener(new View.OnTouchListener() {
-//                @Override
-//                public boolean onTouch(View v, MotionEvent event) {
-//                    float touchY = event.getRawX();
-//                    float touchX = event.getRawY();
-//                    int touchy = (int) touchY / imagebutton1.getHeight();
-//                    int touchx = (int) touchX / imagebutton2.getWidth();
-//                    System.out.println(touchy);
-//                    System.out.println(touchx);
-//                    if(touchy ==0 && touchx ==1){
-//                        System.out.println(buttonPazzle[0][0]);
-//                        if(buttonPazzle[0][1] == imagebutton4) {
-//                            Button valuebutton0 = buttonPazzle[0][0];
-//                            Button valuebutton1 = buttonPazzle[0][1];
-//                            buttonPazzle[0][0] = valuebutton0;
-//                            buttonPazzle[0][1] = valuebutton1;
-//                        }else if(buttonPazzle[1][0] == imagebutton4){
-//                            Button valuebutton0 = buttonPazzle[1][0];
-//                            Button valuebutton1 = buttonPazzle[0][0];
-//                            buttonPazzle[0][0] = valuebutton0;
-//                            buttonPazzle[1][0] = valuebutton1;
-//                        }
-//                    }else if(touchy ==1 && touchx ==1){
-//                        if(buttonPazzle[0][2] == imagebutton4) {
-//                            Button valuebutton0 = buttonPazzle[0][1];
-//                            Button valuebutton1 = buttonPazzle[0][2];
-//                            buttonPazzle[0][1] = valuebutton0;
-//                            buttonPazzle[0][2] = valuebutton1;
-//                        }else if(buttonPazzle[1][1] == imagebutton4){
-//                            Button valuebutton0 = buttonPazzle[0][1];
-//                            Button valuebutton1 = buttonPazzle[1][1];
-//                            buttonPazzle[1][1] = valuebutton0;
-//                            buttonPazzle[0][1] = valuebutton1;
-//                        }else if(buttonPazzle[0][0] == imagebutton4){
-//                            Button valuebutton0 = buttonPazzle[0][1];
-//                            Button valuebutton1 = buttonPazzle[0][0];
-//                            buttonPazzle[0][0] = valuebutton0;
-//                            buttonPazzle[0][1] = valuebutton1;
-//                        }
-//                    }else if(touchy ==2 && touchx ==1){
-//                        if(buttonPazzle[0][3] == imagebutton4) {
-//                            Button valuebutton0 = buttonPazzle[0][1];
-//                            Button valuebutton1 = buttonPazzle[0][2];
-//                            buttonPazzle[0][2] = valuebutton0;
-//                            buttonPazzle[0][3] = valuebutton1;
-//                        }else if(buttonPazzle[1][3] == imagebutton4){
-//                            Button valuebutton0 = buttonPazzle[0][3];
-//                            Button valuebutton1 = buttonPazzle[1][3];
-//                            buttonPazzle[1][3] = valuebutton0;
-//                            buttonPazzle[0][3] = valuebutton1;
-//                        }else if(buttonPazzle[0][1] == imagebutton4){
-//                            Button valuebutton0 = buttonPazzle[0][2];
-//                            Button valuebutton1 = buttonPazzle[0][1];
-//                            buttonPazzle[0][1] = valuebutton0;
-//                            buttonPazzle[0][2] = valuebutton1;
-//                        }
-//                    }else if(touchy ==3 && touchx ==1){
-//                        if(buttonPazzle[0][2] == imagebutton4) {
-//                            Button valuebutton0 = buttonPazzle[0][3];
-//                            Button valuebutton1 = buttonPazzle[0][2];
-//                            buttonPazzle[0][2] = valuebutton0;
-//                            buttonPazzle[0][3] = valuebutton1;
-//                        }else if(buttonPazzle[1][3] == imagebutton4){
-//                            Button valuebutton0 = buttonPazzle[0][3];
-//                            Button valuebutton1 = buttonPazzle[1][3];
-//                            buttonPazzle[1][3] = valuebutton0;
-//                            buttonPazzle[0][3] = valuebutton1;
-//                        }
-//                    }
-//                    return false;
-//                }
-//            });
-//        }
-//    }
+
+    private void buttonAnswer(){
+        buttonPazzle[0][3].setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                System.out.println("button4");
+                for(int i = 0; i <= 3; i ++){
+                    for(int z = 0;z<=3;z ++) {
+                        System.out.println(buttonPazzle[i][z]);
+                    }
+                }
+            }
+        });
+    }
+    private void touchZahyou(){
+        imageID = new Button[]{
+                imagebutton1,imagebutton2,imagebutton3,imagebutton4,imagebutton5,imagebutton6,imagebutton7,imagebutton8,imagebutton9,imagebutton10,imagebutton11,imagebutton12,imagebutton13,imagebutton14,imagebutton15,imagebutton16
+        };
+        for(int i = 0; i <= 3; i ++) {
+            for (int z = 0; z <= 3; z++) {
+                buttonPazzle[i][z].setOnTouchListener(new View.OnTouchListener() {
+                    @Override
+                    public boolean onTouch(View v, MotionEvent event) {
+                        float touchY = event.getRawX();
+                        float touchX = event.getRawY();
+                        int touchy = (int) touchY / 180;
+                        int touchx = (int) touchX / 180;
+                        System.out.println(touchx);
+                        System.out.println(touchy);
+//                        System.out.println("id:"+ v.getId());
+                        System.out.println("background:"+ v.getBackground());
+
+                        if (touchx == 1 && touchy == 0 ) {
+                            System.out.println(buttonPazzle[0][0]);
+                            if (buttonPazzle[0][1] == buttonPazzle[0][3]) {
+                                System.out.println("true");
+                                int valuebutton0 = buttonPazzle[0][0].getId();
+                                int valuebutton1 = buttonPazzle[0][1].getId();
+                                buttonPazzle[0][0] = imagebutton = findViewById(valuebutton0);
+                                buttonPazzle[0][1] = imagebutton = findViewById(valuebutton1);
+                            } else if (buttonPazzle[1][0] == buttonPazzle[0][3]) {
+                                System.out.println("true");
+
+                                int valuebutton0 = buttonPazzle[1][0].getId();
+                                int valuebutton1 = buttonPazzle[0][0].getId();
+                                buttonPazzle[0][0] = imagebutton = findViewById(valuebutton0);
+                                buttonPazzle[1][0] = imagebutton = findViewById(valuebutton1);
+                            }
+                        } else if (touchy == 1 && touchx == 1) {
+                            if (buttonPazzle[0][2] == buttonPazzle[0][3]) {
+                                System.out.println("true");
+
+                                int valuebutton0 = buttonPazzle[0][1].getId();
+                                int valuebutton1 = buttonPazzle[0][2].getId();
+                                buttonPazzle[0][1] = imagebutton = findViewById(valuebutton0);
+                                buttonPazzle[0][2] = imagebutton = findViewById(valuebutton1);
+                            } else if (buttonPazzle[1][1] == buttonPazzle[0][3]) {
+                                System.out.println("true");
+
+                                int valuebutton0 = buttonPazzle[0][1].getId();
+                                int valuebutton1 = buttonPazzle[1][1].getId();
+                                buttonPazzle[1][1] = imagebutton = findViewById(valuebutton0);
+                                buttonPazzle[0][1] = imagebutton = findViewById(valuebutton1);
+                            } else if (buttonPazzle[0][0] == buttonPazzle[0][3]) {
+                                System.out.println("true");
+
+                                int valuebutton0 = buttonPazzle[0][1].getId();
+                                int valuebutton1 = buttonPazzle[0][0].getId();
+                                buttonPazzle[0][0] = findViewById(valuebutton0);
+                                buttonPazzle[0][1] = findViewById(valuebutton1);
+                            }
+                        } else if (touchx == 1 && touchy == 2) {
+                            if (buttonPazzle[0][3] == buttonPazzle[0][3]) {
+                                System.out.println("true");
+
+                                int valuebutton0 = buttonPazzle[0][1].getId();
+                                int valuebutton1 = buttonPazzle[0][2].getId();
+                                buttonPazzle[0][2] = imagebutton = findViewById(valuebutton0);
+                                buttonPazzle[0][3] = imagebutton = findViewById(valuebutton1);
+                            } else if (buttonPazzle[1][3] == buttonPazzle[0][3]) {
+                                System.out.println("true");
+
+                                int valuebutton0 = buttonPazzle[0][3].getId();
+                                int valuebutton1 = buttonPazzle[1][3].getId();
+                                buttonPazzle[1][3] = imagebutton = findViewById(valuebutton0);
+                                buttonPazzle[0][3] = imagebutton = findViewById(valuebutton1);
+                            } else if (buttonPazzle[0][1] == buttonPazzle[0][3]) {
+                                System.out.println("true");
+
+                                int valuebutton0 = buttonPazzle[0][2].getId();
+                                int valuebutton1 = buttonPazzle[0][1].getId();
+                                buttonPazzle[0][1] = imagebutton = findViewById(valuebutton0);
+                                buttonPazzle[0][2] = imagebutton = findViewById(valuebutton1);
+                            }
+                        } else if (touchx == 1 && touchy == 3) {
+                            if (buttonPazzle[0][2] == buttonPazzle[0][3]) {
+                                System.out.println("true");
+
+                                int valuebutton0 = buttonPazzle[0][3].getId();
+                                int valuebutton1 = buttonPazzle[0][2].getId();
+                                buttonPazzle[0][2] = imagebutton = findViewById(valuebutton0);
+                                buttonPazzle[0][3] = imagebutton = findViewById(valuebutton1);
+                            } else if (buttonPazzle[1][3] == buttonPazzle[0][3]) {
+                                System.out.println("true");
+
+                                int valuebutton0 = buttonPazzle[0][3].getId();
+                                int valuebutton1 = buttonPazzle[1][3].getId();
+                                buttonPazzle[1][3] = imagebutton = findViewById(valuebutton0);
+                                buttonPazzle[0][3] = imagebutton = findViewById(valuebutton1);
+                            }
+                        }
+                        return false;
+                    }
+                });
+            }
+        }
+    }
 
 
 }
